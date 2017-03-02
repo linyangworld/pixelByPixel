@@ -1,7 +1,6 @@
 int R, G, B, A;
 PImage ourImage;
 float t;
-//float tr, tg, tb;
 
 void setup() {
   size(2000, 1210);
@@ -11,9 +10,6 @@ void setup() {
   ourImage.loadPixels();
 
   t = 0;
-  //tr = 0;
-  //tg = 10000;
-  //tb = 20000;
 }
 void draw() {
   background(0);
@@ -32,12 +28,6 @@ void draw() {
         G=(R+G+B)/3;
         B=(R+G+B)/3;                                        
       } 
-      //R = int(R * (noise(tr)));
-      //G = int(G * (noise(tg)));
-      //B = int(B * (noise(tb)));
-      //R = (R + int(map(noise(tr), 0, 1, 0, 255))) / 2;
-      //G = (G + int(map(noise(tg), 0, 1, 0, 255))) / 2;
-      //B = (B + int(map(noise(tb), 0, 1, 0, 255))) / 2;
 
       PxPSetPixel(x, y, R, G, B, 255, pixels, width);
     }
@@ -45,9 +35,6 @@ void draw() {
   updatePixels();
   println (frameRate);
   t += 0.01;
-  //tr += 0.1;
-  //tg += 0.1;
-  //tb += 0.1;
 }
 
 void PxPGetPixel(int x, int y, int[] pixelArray, int pixelsWidth) {
